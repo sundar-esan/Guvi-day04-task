@@ -1,11 +1,19 @@
-var request= new XMLHttpRequest();
-request.open('GET','https://restcountries.com/v3.1/all',true);
-request.send();
-request.onload = function (){
-
-    var data = JSON.parse(request.response);
-    console.log(data);
-    for (var i=0;i<data.length;i++){
-        console.log(data[i].region,data[i].subregion,data[i].population,data[i].name);
-    }
-}
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "https://raw.githubusercontent.com/rvsp/restcountries-json-data/master/res-countries.json");
+xhr.onload = function () {
+  var countries = JSON.parse(this.response);
+  console.log(countries);
+  for (let i in countries) {
+    console.log(countries[i].name);
+    console.log(countries[i].flag);
+    console.log(countries[i].region);
+    console.log(countries[i]["subregion"]);
+    console.log(countries[i].population);
+    console.log(" --------"); //for a gap
+  }
+};
+xhr.onerror = function () {
+  console.log("Error", this.statusText);
+};
+xhr.send();
+ 
