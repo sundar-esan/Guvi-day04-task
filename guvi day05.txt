@@ -1,0 +1,55 @@
+               Guvi Day-05 Task
+
+1)Do the below programs in anonymous function & IIFE
+
+  a)Print odd numbers in an array
+   
+   To find an Odd number it is very simple, divide the number by 2 if the remainder value is not zero then it’s an Odd number.
+
+Example if you give the start and end range from 10 to 20, the program has to print 11, 13, 15, 17, 19.
+
+   
+   for(i=10; i<=20; i++){
+  // let's divide the value by 2
+  // if the remainder is not a zero then it's an odd number
+ 
+  if(i % 2 != 0){
+    console.log(i);
+            }
+         }
+     
+  b)Convert all the strings to title caps in a string array  
+
+   function titleCase(str) {
+      str = str.toLowerCase().split(' ');
+  for (var i = 0; i < str.length; i++) {
+    str[i] = str[i].charAt(0).toUpperCase() + str[i].slice(1); 
+  }
+    return str.join(' ');
+    }
+      document.write(titleCase("HI THIS IS JOHN"));
+
+    
+   c)Sum of all numbers in an array
+
+      var array = [1, 2, 3, 4, 5];
+    
+    // Getting sum of numbers
+    var sum = array.reduce(function(a, b){
+        return a + b;
+    }, 0);
+    
+    console.log(sum); 
+
+
+
+
+
+
+
+
+
+
+
+
+
